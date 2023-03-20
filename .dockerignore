@@ -7,9 +7,9 @@ dist
 .idea
 .vscode
 
-# .env
-# .env.development
-# .env.production
+.env
+.env.development
+.env.production
 
 Dockerfile
 docker-compose.yml
