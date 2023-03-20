@@ -6,6 +6,8 @@ ENV NODE_ENV = "production"
 
 WORKDIR /usr/big-winner-clone-proto-api
 
+RUN echo ${DATABASE_URL}
+
 COPY package.json .
 COPY yarn.lock .
 
