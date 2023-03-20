@@ -33,6 +33,13 @@ enum QuestionDifficulty {
   hard
 }
 
+enum CorrectOptionType {
+  option_one
+  option_two
+  option_three
+  option_four
+}
+
 model User {
   id                 String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name               String
@@ -91,7 +98,7 @@ model Question {
   option_two        String
   option_three      String
   option_four       String
-  correct_option    String
+  correct_option    CorrectOptionType
   updatedAt         DateTime            @updatedAt
   createdAt         DateTime            @default(now())
   difficulty        QuestionDifficulty
