@@ -64,6 +64,9 @@ export const getQuestions = async (req: Request, res: Response) => {
 				option_two: true,
 				option_three: true,
 				option_four: true,
+			},
+			orderBy: {
+				createdAt: "desc"
 			}
 		});
 
