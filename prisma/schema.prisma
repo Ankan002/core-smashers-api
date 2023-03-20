@@ -27,19 +27,25 @@ enum QuestionAnswerResult {
   wrong
 }
 
+enum QuestionDifficulty {
+  easy
+  medium
+  hard
+}
+
 model User {
-  id                  String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name                String
-  avatar              String
-  username            String                @unique
-  email               String                @unique
-  provider_id         String                @unique
-  updatedAt           DateTime              @updatedAt
-  createdAt           DateTime              @default(now())
-  Profile             Profile[]
-  Rating              Rating[]
-  ChallengeAttemplted ChallengeAttemplted[]
-  QuestionAttempted   QuestionAttempted[]
+  id                 String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name               String
+  avatar             String
+  username           String               @unique
+  email              String               @unique
+  provider_id        String               @unique
+  updatedAt          DateTime             @updatedAt
+  createdAt          DateTime             @default(now())
+  Profile            Profile[]
+  Rating             Rating[]
+  ChallengeAttempted ChallengeAttempted[]
+  QuestionAttempted  QuestionAttempted[]
 }
 
 model Profile {
@@ -88,10 +94,11 @@ model Question {
   correct_option    String
   updatedAt         DateTime            @updatedAt
   createdAt         DateTime            @default(now())
+  difficulty        QuestionDifficulty
   QuestionAttempted QuestionAttempted[]
 }
 
-model ChallengeAttemplted {
+model ChallengeAttempted {
   id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   date            String
   user            User     @relation(fields: [userId], references: [id])

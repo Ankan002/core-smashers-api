@@ -11,7 +11,7 @@ interface UserJWTPayload extends JwtPayload {
 }
 
 export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
-	const authToken = req.headers["authToken"];
+	const authToken = req.headers["authtoken"];
 
 	if (!authToken) {
 		return res.status(401).json({
