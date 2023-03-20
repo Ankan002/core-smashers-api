@@ -55,6 +55,16 @@ export const getQuestions = async (req: Request, res: Response) => {
 			},
 			skip: pageSize * (pageNumber - 1),
 			take: pageSize,
+			select: {
+				id: true,
+				question: true,
+				difficulty: true,
+				topic: true,
+				option_one: true,
+				option_two: true,
+				option_three: true,
+				option_four: true,
+			}
 		});
 
 		return res.status(200).json({
