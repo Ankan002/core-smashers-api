@@ -2,6 +2,8 @@ FROM node:alpine
 
 ARG PORT
 ARG DATABASE_URL
+
+ENV JWT_SCRET=${JWT_SCRET}
 ENV NODE_ENV="production"
 
 WORKDIR /usr/big-winner-clone-proto-api
