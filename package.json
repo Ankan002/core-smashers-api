@@ -9,7 +9,7 @@
   "scripts": {
     "start": "yarn build && node build/index.js",
     "dev": "nodemon",
-    "build": "npx swc src -d build --config-file .swcrc",
+    "build": "swc src -d build",
     "test": "jest --passWithNoTests",
     "test-dev": "jest --passWithNoTests --setupFiles dotenv/config",
     "lint": "eslint"
