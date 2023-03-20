@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { logger } from "utils/logger";
 import { morganConfig } from "middlewares/morgan";
+import { authRouter } from "routes/auth";
 
 export const startServer = () => {
 	const app = express();
@@ -17,6 +18,8 @@ export const startServer = () => {
 			message: "Hello from API",
 		});
 	});
+
+	app.use("/api/auth", authRouter);
 
 	app.listen(8000, () => logger.info(`App is running at ${PORT}`));
 };
