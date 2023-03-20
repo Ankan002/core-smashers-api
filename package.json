@@ -11,7 +11,7 @@
     "start-dev": "yarn build-dev && node build/index.js",
     "dev": "nodemon",
     "build-dev": "swc src -d build",
-    "build": "yarn add -D @swc/cli @swc/core && src -d build",
+    "build": "yarn add -D @swc/cli @swc/core && swc -d build",
     "test": "jest --passWithNoTests",
     "test-dev": "jest --passWithNoTests --setupFiles dotenv/config",
     "lint": "eslint"
