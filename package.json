@@ -8,8 +8,10 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn build && node build/index.js",
+    "start-dev": "yarn build-dev && node build/index.js",
     "dev": "nodemon",
-    "build": "swc src -d build",
+    "build-dev": "swc src -d build",
+    "build": "yarn add -D @swc/cli @swc/core && src -d build",
     "test": "jest --passWithNoTests",
     "test-dev": "jest --passWithNoTests --setupFiles dotenv/config",
     "lint": "eslint"
