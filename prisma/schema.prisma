@@ -72,8 +72,8 @@ model Rating {
 model Challenge {
   id          String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name        String
-  start_time  Int
-  end_time    Int
+  start_time  BigInt
+  end_time    BigInt
   type        ChallengeType
   total_marks Int
   updatedAt   DateTime      @updatedAt

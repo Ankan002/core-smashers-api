@@ -25,7 +25,7 @@ export const startServer = () => {
 	app.use("/api/auth", authRouter);
 	app.use("/api/question", questionRouter);
 	app.use("/api/user", userRouter);
-	app.use("/api/challenges", challengeRouter)
+	app.use("/api/challenges", challengeRouter);
 
 	app.listen(8000, () => logger.info(`App is running at ${PORT}`));
 };
