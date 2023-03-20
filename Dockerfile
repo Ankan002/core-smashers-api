@@ -1,6 +1,7 @@
 FROM node:alpine
 
 ENV PORT ${PORT}
+ENV DATABASE_URL ${DATABASE_URL}
 ENV NODE_ENV = "production"
 
 WORKDIR /usr/big-winner-clone-proto-api
