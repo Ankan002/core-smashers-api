@@ -42,11 +42,12 @@ export const login = async (req: Request, res: Response) => {
 			const dataToBeEncryptedInToken = {
 				user: retrievedUser,
 			};
-	
+
 			const jwtToken = jwt.sign(dataToBeEncryptedInToken, process.env["JWT_SECRET"] ?? "");
-	
-			return res.status(200).set("authToken", jwtToken).json({
+
+			return res.status(200).json({
 				success: true,
+				authToken: jwtToken,
 			});
 		}
 
@@ -77,8 +78,9 @@ export const login = async (req: Request, res: Response) => {
 
 		const jwtToken = jwt.sign(dataToBeEncryptedInToken, process.env["JWT_SECRET"] ?? "");
 
-		return res.status(200).set("authToken", jwtToken).json({
+		return res.status(200).json({
 			success: true,
+			authToken: jwtToken,
 		});
 	} catch (error) {
 		if (error instanceof Error) {
